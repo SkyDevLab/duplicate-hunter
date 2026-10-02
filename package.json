@@ -8,7 +8,8 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present && npm run build:action",
+    "build:action": "esbuild packages/github/src/action-runner.ts --bundle --platform=node --target=node20 --outfile=dist/action.js",
     "test": "tsx --test tests/webhook-verification.test.ts tests/config-parser.test.ts tests/signal-extraction.test.ts tests/similarity-fixtures.test.ts tests/prompt-injection.test.ts tests/comment-formatter.test.ts tests/maintainer-workflow.test.ts tests/end-to-end-workflow.test.ts",
     "dev:web": "npm run dev --workspace=apps/web",
     "dev:bot": "npm run dev --workspace=apps/github-app"
