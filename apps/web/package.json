@@ -1,0 +1,32 @@
+{
+  "name": "@duplicate-hunter/web",
+  "version": "1.0.0",
+  "description": "Maintainer dashboard, simulator, and REST API for Duplicate Hunter",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000"
+  },
+  "dependencies": {
+    "@duplicate-hunter/core": "*",
+    "@duplicate-hunter/config": "*",
+    "@duplicate-hunter/similarity": "*",
+    "@duplicate-hunter/ai": "*",
+    "@duplicate-hunter/github": "*",
+    "@duplicate-hunter/database": "*",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.436.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,46 @@
+# Duplicate Hunter Repository Configuration
+# File: .github/duplicate-hunter.yml
+
+enabled: true
+
+issues:
+  enabled: true
+  threshold: 0.78
+  searchClosedIssues: true
+  maxLookbackIssues: 500
+
+pullRequests:
+  enabled: true
+  threshold: 0.80
+
+maxCandidates: 5
+
+comment:
+  enabled: true
+  minConfidence: medium
+  header: "### 🕵️ Duplicate Hunter"
+
+labels:
+  enabled: true
+  label: possible-duplicate
+  reviewLabel: duplicate-review
+
+checks:
+  enabled: true
+  failureMode: neutral
+
+confidenceWeights:
+  semantic: 0.35
+  error: 0.20
+  component: 0.15
+  reproduction: 0.10
+  environment: 0.08
+  version: 0.05
+  label: 0.04
+  referencedCode: 0.03
+
+ai:
+  provider: local # options: local | openai | ollama
+  # model: text-embedding-3-small
+
+retentionDays: 90

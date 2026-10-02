@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL Database with pgvector extension
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: duplicate-hunter-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres_secure_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-duplicate_hunter}
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./packages/database/src/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. Next.js Web Dashboard & REST API
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner-web
+    container_name: duplicate-hunter-web
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:postgres_secure_pass@postgres:5432/duplicate_hunter
+      GITHUB_APP_ID: ${GITHUB_APP_ID}
+      GITHUB_PRIVATE_KEY: ${GITHUB_PRIVATE_KEY}
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # 3. Standalone GitHub App Webhook Listener
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner-bot
+    container_name: duplicate-hunter-bot
+    restart: unless-stopped
+    ports:
+      - '3001:3001'
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      DATABASE_URL: postgresql://postgres:postgres_secure_pass@postgres:5432/duplicate_hunter
+      GITHUB_APP_ID: ${GITHUB_APP_ID}
+      GITHUB_PRIVATE_KEY: ${GITHUB_PRIVATE_KEY}
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:

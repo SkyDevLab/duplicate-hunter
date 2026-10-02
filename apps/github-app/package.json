@@ -1,0 +1,24 @@
+{
+  "name": "@duplicate-hunter/github-app",
+  "version": "1.0.0",
+  "description": "Standalone GitHub App webhook server and worker for Duplicate Hunter",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@duplicate-hunter/core": "*",
+    "@duplicate-hunter/config": "*",
+    "@duplicate-hunter/similarity": "*",
+    "@duplicate-hunter/ai": "*",
+    "@duplicate-hunter/github": "*",
+    "@duplicate-hunter/database": "*",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

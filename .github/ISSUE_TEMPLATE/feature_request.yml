@@ -1,0 +1,30 @@
+name: Feature Request
+description: Propose a new feature, signal extractor, or AI integration for Duplicate Hunter
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome feature ideas and suggestions to expand Duplicate Hunter's capabilities!
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a specific maintainer pain point or false positive case?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the ideal user experience or detection mode (e.g., cross-repository detection, specialized language stack traces).
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or workarounds you've considered.
+    validations:
+      required: false

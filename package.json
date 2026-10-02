@@ -1,0 +1,39 @@
+{
+  "name": "duplicate-hunter-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-quality GitHub App that detects duplicate or related GitHub Issues and Pull Requests",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "tsx --test tests/webhook-verification.test.ts tests/config-parser.test.ts tests/signal-extraction.test.ts tests/similarity-fixtures.test.ts tests/prompt-injection.test.ts tests/comment-formatter.test.ts tests/maintainer-workflow.test.ts tests/end-to-end-workflow.test.ts",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:bot": "npm run dev --workspace=apps/github-app"
+  },
+  "keywords": [
+    "github-app",
+    "duplicate-detection",
+    "issue-management",
+    "ai",
+    "open-source"
+  ],
+  "author": "Duplicate Hunter Maintainers",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "@octokit/rest": "^22.0.1",
+    "dotenv": "^18.0.5",
+    "js-yaml": "^5.4.2",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

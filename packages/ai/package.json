@@ -1,0 +1,17 @@
+{
+  "name": "@duplicate-hunter/ai",
+  "version": "1.0.0",
+  "description": "Provider-independent AI and embedding layer with prompt injection protection for Duplicate Hunter",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@duplicate-hunter/core": "*",
+    "@duplicate-hunter/similarity": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@duplicate-hunter/config",
+  "version": "1.0.0",
+  "description": "Configuration parser and validator for Duplicate Hunter",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@duplicate-hunter/core": "*",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "typescript": "^5.4.0"
+  }
+}

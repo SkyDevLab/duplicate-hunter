@@ -1,0 +1,14 @@
+{
+  "name": "@duplicate-hunter/core",
+  "version": "1.0.0",
+  "description": "Core domain models, interfaces, and scoring types for Duplicate Hunter",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

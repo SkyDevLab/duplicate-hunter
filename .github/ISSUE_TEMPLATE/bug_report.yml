@@ -1,0 +1,40 @@
+name: Bug Report
+description: Report an issue with Duplicate Hunter duplicate detection or app behavior
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Duplicate Hunter!
+  - type: input
+    id: version
+    attributes:
+      label: Duplicate Hunter Version or Commit
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the issue clearly. If duplicate detection behaved unexpectedly, provide the trigger and candidate issue numbers.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open issue with title '...'
+        2. Webhook received
+        3. Bot comments unexpectedly
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Operating System and Environment
+      placeholder: e.g. Ubuntu 22.04, Node.js 20, Self-hosted GitHub Enterprise
+    validations:
+      required: false

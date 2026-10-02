@@ -1,0 +1,16 @@
+{
+  "name": "@duplicate-hunter/similarity",
+  "version": "1.0.0",
+  "description": "Signal extraction, text normalization, and similarity scoring for Duplicate Hunter",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@duplicate-hunter/core": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
