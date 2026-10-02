@@ -3,3 +3,4 @@ export * from './auth.js';
 export * from './comment-formatter.js';
 export * from './github-client.js';
 export * from './workflow-runner.js';
+export * from './action-runner.js';

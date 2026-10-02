@@ -1,0 +1,24 @@
+name: 'Duplicate Hunter'
+description: 'AI-assisted duplicate and related GitHub Issue & Pull Request detector'
+author: 'Duplicate Hunter Maintainers'
+branding:
+  icon: 'search'
+  color: 'green'
+
+inputs:
+  github-token:
+    description: 'GitHub token for reading issues and posting comments'
+    required: false
+    default: ${{ github.token }}
+  config-path:
+    description: 'Path to repository configuration file'
+    required: false
+    default: '.github/duplicate-hunter.yml'
+  openai-api-key:
+    description: 'Optional OpenAI API Key for text-embedding-3-small'
+    required: false
+    default: ''
+
+runs:
+  using: 'node20'
+  main: 'dist/action.js'
