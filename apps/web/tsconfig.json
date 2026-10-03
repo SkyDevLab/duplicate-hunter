@@ -19,7 +19,13 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@duplicate-hunter/core": ["../../packages/core/src/index.ts"],
+      "@duplicate-hunter/config": ["../../packages/config/src/index.ts"],
+      "@duplicate-hunter/similarity": ["../../packages/similarity/src/index.ts"],
+      "@duplicate-hunter/ai": ["../../packages/ai/src/index.ts"],
+      "@duplicate-hunter/github": ["../../packages/github/src/index.ts"],
+      "@duplicate-hunter/database": ["../../packages/database/src/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
