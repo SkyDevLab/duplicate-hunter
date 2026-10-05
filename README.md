@@ -2,14 +2,16 @@
 
 # 🕵️ Duplicate Hunter
 
-### *Find the issue before you create the duplicate.*
+### *AI-assisted duplicate detection for GitHub Issues and Pull Requests.*
+
+**Duplicate Hunter** is a GitHub App for detecting duplicate GitHub issues and pull requests, explaining matching evidence, and helping open-source maintainers review potential duplicates before closing anything.
 
 [![CI](https://github.com/SkyDevLab/duplicate-hunter/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyDevLab/duplicate-hunter/actions)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
 
-**Duplicate Hunter** is a production-quality, AI-assisted GitHub App designed to help open-source maintainers detect potentially duplicate or highly related GitHub Issues and Pull Requests.
+**GitHub App · GitHub Marketplace · Duplicate Issue Detection · Duplicate Pull Request Detection · AI-assisted Developer Tool**
 
 > [!IMPORTANT]
 > **Core Principle:** Duplicate Hunter must **never automatically close an issue or pull request** based solely on AI analysis.
