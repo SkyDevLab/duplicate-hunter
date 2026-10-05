@@ -48,7 +48,7 @@ export async function runGitHubAction() {
   }
 }
 
-if (process.env.GITHUB_ACTIONS === 'true') {
+if (process.env.GITHUB_ACTIONS === 'true' && (process.env.INPUT_GITHUB_TOKEN || process.env['INPUT_GITHUB-TOKEN'])) {
   runGitHubAction().catch((err) => {
     console.error('❌ [Duplicate Hunter Action] Fatal error:', err);
     process.exit(1);
