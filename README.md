@@ -4,7 +4,7 @@
 
 ### *Find the issue before you create the duplicate.*
 
-[![CI](https://github.com/duplicate-hunter/duplicate-hunter/actions/workflows/ci.yml/badge.svg)](https://github.com/duplicate-hunter/duplicate-hunter/actions)
+[![CI](https://github.com/SkyDevLab/duplicate-hunter/actions/workflows/ci.yml/badge.svg)](https://github.com/SkyDevLab/duplicate-hunter/actions)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
